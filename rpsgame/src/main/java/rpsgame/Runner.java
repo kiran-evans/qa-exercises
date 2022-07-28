@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class Runner {
 	
 	public static void main(String[] args) {
-		play();
+		System.out.println(play());
 	}
 	
-	public static void play() {
+	public static String play() {
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Choose ROCK, PAPER or SCISSORS\n");
@@ -18,35 +18,34 @@ public class Runner {
 		
 		if (rand < 0.33) {
 			computerChoice = Option.ROCK;
-		} else if (rand > 0.66) {
-			computerChoice = Option.SCISSORS;
-		} else {
+		} else if (rand < 0.66) {
 			computerChoice = Option.PAPER;
+		} else {
+			computerChoice = Option.SCISSORS;
 		}
 		
 		System.out.println("Computer chose " + computerChoice);
 		
 		if (playerChoice == computerChoice) {
-			System.out.println(Result.DRAW);
+			return String.valueOf(Result.DRAW);
 		} else if (playerChoice == Option.ROCK) {
 			if (computerChoice == Option.SCISSORS) {
-				System.out.println("You " + Result.WIN);
+				return "You " + Result.WIN;
 			} else {
-				System.out.println("You " + Result.LOSE);
+				return "You " + Result.LOSE;
 			}
 		} else if (playerChoice == Option.PAPER) {
 			if (computerChoice == Option.ROCK) {
-				System.out.println("You " + Result.WIN);
+				return ("You " + Result.WIN);
 			} else {
-				System.out.println("You " + Result.LOSE);
-			}
-		} else if (playerChoice == Option.SCISSORS) {
-			if (computerChoice == Option.PAPER) {
-				System.out.println("You " + Result.WIN);
-			} else {
-				System.out.println("You " + Result.LOSE);
+				return ("You " + Result.LOSE);
 			}
 		}
 		
+		if (computerChoice == Option.PAPER) {
+			return ("You " + Result.WIN);
+		}
+			
+		return ("You " + Result.LOSE);
 	}
 }
