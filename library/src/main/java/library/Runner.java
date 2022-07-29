@@ -33,7 +33,7 @@ public class Runner {
 		Person person1 = new Person(++personIdCount, "Jim Jones");
 		Person person2 = new Person(++personIdCount, "Smith Smithson");
 		
-		person1.checkOut(libraryInventory.getItemById(4), libraryInventory);
+		person1.checkOut(libraryInventory.getItemById(2), libraryInventory);
 		System.out.println();
 		
 		person2.checkOut(libraryInventory.getItemById(6), libraryInventory);
