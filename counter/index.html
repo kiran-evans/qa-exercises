@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Counter</title>
 </head>
 <body>
-    <input type="number" id="counterInput" placeholder="0">
-    <button id="minusFive">-5</button>
-    <button id="minusOne">-1</button>
-    <button id="reset">Reset</button>
-    <button id="plusOne">+1</button>
-    <button id="plusFive">+5</button>
+    <div id="left">
+        <div id="counter">
+            <input type="number" id="counterInput" value="0">
+        </div>
+    
+        <div id="buttons">
+            <button id="minusFive">-5</button>
+            <button id="minusOne">-1</button>
+            <button id="reset">R</button>
+            <button id="plusOne">+1</button>
+            <button id="plusFive">+5</button>
+        </div>
+    
+        <div id="history">
+            <span id="historyTitle">History</span>
+            <div id="historyList"></div>
+        </div>
+    </div>
 
-    <span id="history">History</span>
+    <div id="right"></div>
     
     <script src="./index.js"></script>
 </body>

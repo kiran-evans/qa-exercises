@@ -1,0 +1,93 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+body {
+    display: flex;
+    background-color: #222;
+    color: #eee;
+    margin: 0;
+}
+
+#left {
+    flex: 1;
+}
+
+#right {
+    flex: 3;
+}
+
+#counter {
+    margin-top: 3rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#counterInput {
+    width: 100%;
+    font-size: 1.8rem;
+    text-align: right;
+    color: #eee;
+    background-color: #555;
+    border: 1px solid #eee;
+    border-radius: 1.3rem;
+    padding: .4rem 1rem;
+}
+
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0;
+}
+
+button {
+    color: #eee;
+    border: 1px solid #eee;
+}
+
+#buttons button {
+    margin-left: .6rem;
+    padding: .4rem .8rem;
+    border-radius: 1rem;
+    background-color: #555;
+}
+
+#history {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+#historyTitle {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    padding-bottom: .4rem;
+    border-bottom: 3px solid #eee;
+}
+
+#historyList div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+#historyList span {
+    margin-right: .8rem;
+}
+
+#historyList button {
+    font-size: .6rem;
+    padding: .1rem .3rem;
+    border-radius: 50%;
+    background-color: #222;
+    color: #f66;
+}
+
+#historyList .removed {
+    color: #f66;
+}
