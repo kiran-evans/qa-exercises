@@ -2,6 +2,8 @@
 
 let id = 0;
 
+// C
+
 document.querySelector("form#createForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -20,6 +22,8 @@ document.querySelector("form#createForm").addEventListener("submit", function (e
         })
         .catch(err => console.error(err));
 });
+
+// R
 
 document.querySelector("form#getForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -40,6 +44,8 @@ document.querySelector("button#getAllButton").addEventListener("click", function
     })
     .catch(err => console.error(err));
 });
+
+// D
 
 document.querySelector("form#deleteForm").addEventListener("submit", function (e) {
     e.preventDefault();
