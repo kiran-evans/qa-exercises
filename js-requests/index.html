@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>js-requests</title>
+</head>
+<body>
+
+    <h1>Create</h1>
+    <form id="createForm">
+        <label for="createAge">Age</label>
+        <input type="number" name="createAge" id="createAgeInput">
+        <label for="createName">Name</label>
+        <input type="text" name="createName" id="createNameInput">
+        <label for="createHabitat">Habitat</label>
+        <input type="text" name="createHabitat" id="createHabitatInput">
+        <label for="createGender">Gender</label>
+        <input type="text" name="createGender" id="createGenderInput">
+        <button type="submit" id="createButton">Create</button>
+    </form>
+    
+    <h1>Get</h1>
+    <form id="getForm">
+        <label for="getId">Get ID</label>
+        <input type="number" name="getId" id="getIdInput" >
+        <button type="submit" id="getIdButton">Get</button>
+        <button type="button" id="getAllButton">Get All</button>
+    </form>
+
+    <h1>Delete</h1>
+    <form id="deleteForm">
+        <label for="delId">Delete ID</label>
+        <input type="nubmer" name="delId" id="delIdInput">
+        <button type="submit" id="delIdButton">Delete</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>
