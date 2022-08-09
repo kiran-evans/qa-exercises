@@ -1,8 +1,10 @@
-package com.example.demo;
+package com.example.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
+
+import com.example.demo.Biscuit;
 
 @Service
 public class BiscuitServiceList implements BiscuitService {
@@ -11,12 +13,10 @@ public class BiscuitServiceList implements BiscuitService {
 
 	// Create
 	@Override
-	public Biscuit makeBiscuit(String name, Double cost) {
-		if (name != null && !name.isBlank() && cost != null) {
-			Biscuit biscuit = new Biscuit(name, cost);
-			biscuit.setId(biscuits.size()); // Auto set id to index of biscuit
+	public Biscuit makeBiscuit(Biscuit biscuit) {
+		if (biscuit.getName() != null && !biscuit.getName().isBlank() && biscuit.getCost() != null) {
 			biscuits.add(biscuit);
-			System.out.println(biscuit.print());
+			System.out.println(biscuit.toString());
 			return biscuit;
 		}
 		
@@ -46,7 +46,7 @@ public class BiscuitServiceList implements BiscuitService {
 		if (cost != null)
 			biscuit.setCost(cost);
 		
-		System.out.println(biscuit.print());
+		System.out.println(biscuit.toString());
 		return biscuit;
 	}
 

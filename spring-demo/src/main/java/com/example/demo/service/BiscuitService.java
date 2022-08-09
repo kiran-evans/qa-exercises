@@ -1,9 +1,11 @@
-package com.example.demo;
+package com.example.demo.service;
 import java.util.List;
+
+import com.example.demo.Biscuit;
 
 public interface BiscuitService {
 
-	Biscuit makeBiscuit(String name, Double cost);
+	Biscuit makeBiscuit(Biscuit biscuit);
 
 	List<Biscuit> getAllBiscuits();
 
