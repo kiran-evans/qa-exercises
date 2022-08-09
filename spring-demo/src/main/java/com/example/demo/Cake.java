@@ -4,7 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Biscuit {
+public class Cake {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class Biscuit {
 		return "id: " + this.id + ", name: " + this.name + ", cost: £" + this.cost;
 	}
 
-	public Biscuit() {
+	public Cake() {
 		super();
 	}
 	
-	public Biscuit(String name, Double cost) {
+	public Cake(String name, Double cost) {
 		super();
 		this.name = name;
 		this.cost = cost;

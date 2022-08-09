@@ -7,40 +7,40 @@ import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.Biscuit;
-import com.example.demo.service.BiscuitService;
+import com.example.demo.Cake;
+import com.example.demo.service.CakeService;
 
 @RestController
-public class BiscuitController {
+public class CakeController {
 	
-	private BiscuitService service;
+	private CakeService service;
 	
 	@Autowired
-	public BiscuitController(BiscuitService service) {
+	public CakeController(CakeService service) {
 		super();
 		this.service = service;
 	}
 
 	// Create
 	@PostMapping("/create")
-	public Biscuit makeBiscuit(@RequestBody Biscuit biscuit) {
-		return this.service.makeBiscuit(biscuit);
+	public Cake makeBiscuit(@RequestBody Cake cake) {
+		return this.service.makeBiscuit(cake);
 	}
 	
 	// Gets
 	@GetMapping("/getAll")
-	public List<Biscuit> getAllBiscuits() {
+	public List<Cake> getAllBiscuits() {
 		return this.service.getAllBiscuits();
 	}
 	
 	@GetMapping("/getById/{id}")
-	public Biscuit getById(@PathVariable() Integer id) {
+	public Cake getById(@PathVariable() Integer id) {
 		return this.service.getById(id);
 	}
 	
 	// Update
 	@PatchMapping("/update/{id}")
-	public Biscuit updateBiscuit(@PathParam("name") String name, @PathParam("cost") Double cost, @PathVariable Integer id) {
+	public Cake updateBiscuit(@PathParam("name") String name, @PathParam("cost") Double cost, @PathVariable Integer id) {
 		return this.service.updateBiscuit(name, cost, id);
 	}
 	
