@@ -23,14 +23,14 @@ public class CakeController {
 
 	// Create
 	@PostMapping("/create")
-	public Cake makeBiscuit(@RequestBody Cake cake) {
-		return this.service.makeBiscuit(cake);
+	public Cake makeCake(@RequestBody Cake cake) {
+		return this.service.makeCake(cake);
 	}
 	
 	// Gets
 	@GetMapping("/getAll")
-	public List<Cake> getAllBiscuits() {
-		return this.service.getAllBiscuits();
+	public List<Cake> getAllCakes() {
+		return this.service.getAllCakes();
 	}
 	
 	@GetMapping("/getById/{id}")
@@ -40,13 +40,13 @@ public class CakeController {
 	
 	// Update
 	@PatchMapping("/update/{id}")
-	public Cake updateBiscuit(@PathParam("name") String name, @PathParam("cost") Double cost, @PathVariable Integer id) {
-		return this.service.updateBiscuit(name, cost, id);
+	public Cake updateCake(@PathParam("name") String name, @PathParam("cost") Double cost, @PathVariable Integer id) {
+		return this.service.updateCake(name, cost, id);
 	}
 	
 	// Delete
 	@DeleteMapping("/delete/{id}")
-	public boolean deleteBiscuit(@PathVariable Integer id) {
-		return this.service.deleteBiscuit(id);
+	public boolean deleteCake(@PathVariable Integer id) {
+		return this.service.deleteCake(id);
 	}
 }

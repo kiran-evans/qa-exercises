@@ -13,7 +13,7 @@ public class CakeServiceList implements CakeService {
 
 	// Create
 	@Override
-	public Cake makeBiscuit(Cake cake) {
+	public Cake makeCake(Cake cake) {
 		if (cake.getName() != null && !cake.getName().isBlank() && cake.getCost() != null) {
 			cakes.add(cake);
 			System.out.println(cake.toString());
@@ -27,7 +27,7 @@ public class CakeServiceList implements CakeService {
 	
 	// Read
 	@Override
-	public List<Cake> getAllBiscuits() {
+	public List<Cake> getAllCakes() {
 		return this.cakes;
 	}
 
@@ -38,7 +38,7 @@ public class CakeServiceList implements CakeService {
 	
 	// Update
 	@Override
-	public Cake updateBiscuit(String name, Double cost, Integer id) {
+	public Cake updateCake(String name, Double cost, Integer id) {
 		Cake cake = this.cakes.get(id);
 		
 		if (name != null && !name.isBlank())
@@ -52,8 +52,8 @@ public class CakeServiceList implements CakeService {
 
 	// Delete
 	@Override
-	public boolean deleteBiscuit(Integer id) {
-		return this.cakes.remove(this.cakes.get(id)); // Find corresponding Biscuit and remove it from biscuits
+	public boolean deleteCake(Integer id) {
+		return this.cakes.remove(this.cakes.get(id)); // Find corresponding Cake and remove it from biscuits
 	}
 	
 	

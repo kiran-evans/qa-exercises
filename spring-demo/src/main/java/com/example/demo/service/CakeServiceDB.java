@@ -20,12 +20,12 @@ public class CakeServiceDB implements CakeService {
 	}
 
 	@Override
-	public Cake makeBiscuit(Cake cake) {
+	public Cake makeCake(Cake cake) {
 		return this.repo.save(cake);
 	}
 
 	@Override
-	public List<Cake> getAllBiscuits() {
+	public List<Cake> getAllCakes() {
 		return this.repo.findAll();
 	}
 
@@ -35,7 +35,7 @@ public class CakeServiceDB implements CakeService {
 	}
 
 	@Override
-	public Cake updateBiscuit(String name, Double cost, Integer id) {
+	public Cake updateCake(String name, Double cost, Integer id) {
 		Cake cake = this.getById(id);
 		
 		if (name != null && !name.isBlank())
@@ -47,7 +47,7 @@ public class CakeServiceDB implements CakeService {
 	}
 
 	@Override
-	public boolean deleteBiscuit(Integer id) {
+	public boolean deleteCake(Integer id) {
 		this.repo.deleteById(id);
 		return true;
 	}

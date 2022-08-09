@@ -5,14 +5,14 @@ import com.example.demo.Cake;
 
 public interface CakeService {
 
-	Cake makeBiscuit(Cake cake);
+	Cake makeCake(Cake cake);
 
-	List<Cake> getAllBiscuits();
+	List<Cake> getAllCakes();
 
 	Cake getById(Integer id);
 
-	Cake updateBiscuit(String name, Double cost, Integer id);
+	Cake updateCake(String name, Double cost, Integer id);
 
-	boolean deleteBiscuit(Integer id);
+	boolean deleteCake(Integer id);
 
 }
