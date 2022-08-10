@@ -5,6 +5,8 @@ import java.util.List;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.Cake;
@@ -23,8 +25,8 @@ public class CakeController {
 
 	// Create
 	@PostMapping("/create")
-	public Cake makeCake(@RequestBody Cake cake) {
-		return this.service.makeCake(cake);
+	public ResponseEntity<Cake> makeCake(@RequestBody Cake cake) {
+		return new ResponseEntity<Cake>(this.service.makeCake(cake), HttpStatus.CREATED);
 	}
 	
 	// Gets
@@ -34,14 +36,14 @@ public class CakeController {
 	}
 	
 	@GetMapping("/getById/{id}")
-	public Cake getById(@PathVariable() Integer id) {
-		return this.service.getById(id);
+	public ResponseEntity<Cake> getById(@PathVariable() Integer id) {
+		return new ResponseEntity<Cake>(this.service.getById(id), HttpStatus.OK);
 	}
 	
 	// Update
 	@PatchMapping("/update/{id}")
-	public Cake updateCake(@PathParam("name") String name, @PathParam("cost") Double cost, @PathVariable Integer id) {
-		return this.service.updateCake(name, cost, id);
+	public Cake updateCake(@PathParam("flavour") String flavour, @PathParam("servings") Integer servings, @PathParam("cost") Double cost, @PathVariable Integer id) {
+		return this.service.updateCake(flavour, servings, cost, id);
 	}
 	
 	// Delete

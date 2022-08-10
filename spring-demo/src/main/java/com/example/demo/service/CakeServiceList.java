@@ -14,13 +14,11 @@ public class CakeServiceList implements CakeService {
 	// Create
 	@Override
 	public Cake makeCake(Cake cake) {
-		if (cake.getName() != null && !cake.getName().isBlank() && cake.getCost() != null) {
+		if (cake.getFlavour() != null && !cake.getFlavour().isBlank() && cake.getServings() > 0 && cake.getCost() != null) {
 			cakes.add(cake);
 			System.out.println(cake.toString());
 			return cake;
 		}
-		
-		System.out.println("Name and cost must both be provided.");
 		
 		return null;
 	}
@@ -38,11 +36,13 @@ public class CakeServiceList implements CakeService {
 	
 	// Update
 	@Override
-	public Cake updateCake(String name, Double cost, Integer id) {
+	public Cake updateCake(String name, Integer servings, Double cost, Integer id) {
 		Cake cake = this.cakes.get(id);
 		
 		if (name != null && !name.isBlank())
-			cake.setName(name);
+			cake.setFlavour(name);
+		if (servings != null)
+			cake.setServings(servings);
 		if (cost != null)
 			cake.setCost(cost);
 		

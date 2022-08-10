@@ -11,7 +11,7 @@ public interface CakeService {
 
 	Cake getById(Integer id);
 
-	Cake updateCake(String name, Double cost, Integer id);
+	Cake updateCake(String name, Integer servings, Double cost, Integer id);
 
 	boolean deleteCake(Integer id);
 

@@ -35,11 +35,13 @@ public class CakeServiceDB implements CakeService {
 	}
 
 	@Override
-	public Cake updateCake(String name, Double cost, Integer id) {
+	public Cake updateCake(String flavour, Integer servings, Double cost, Integer id) {
 		Cake cake = this.getById(id);
 		
-		if (name != null && !name.isBlank())
-			cake.setName(name);
+		if (flavour != null && !flavour.isBlank())
+			cake.setFlavour(flavour);
+		if (servings != null)
+			cake.setServings(servings);
 		if (cost != null)
 			cake.setCost(cost);
 		
