@@ -29,7 +29,7 @@ public class CakeController {
 		return new ResponseEntity<Cake>(this.service.makeCake(cake), HttpStatus.CREATED);
 	}
 	
-	// Gets
+	// Read
 	@GetMapping("/getAll")
 	public List<Cake> getAllCakes() {
 		return this.service.getAllCakes();
@@ -42,13 +42,13 @@ public class CakeController {
 	
 	// Update
 	@PatchMapping("/update/{id}")
-	public Cake updateCake(@PathParam("flavour") String flavour, @PathParam("servings") Integer servings, @PathParam("cost") Double cost, @PathVariable Integer id) {
-		return this.service.updateCake(flavour, servings, cost, id);
+	public ResponseEntity<Cake> updateCake(@PathParam("flavour") String flavour, @PathParam("servings") Integer servings, @PathParam("cost") Double cost, @PathVariable Integer id) {
+		return new ResponseEntity<Cake>(this.service.updateCake(flavour, servings, cost, id), HttpStatus.OK);
 	}
 	
 	// Delete
 	@DeleteMapping("/delete/{id}")
-	public boolean deleteCake(@PathVariable Integer id) {
-		return this.service.deleteCake(id);
+	public ResponseEntity<Boolean> deleteCake(@PathVariable Integer id) {
+		return new ResponseEntity<Boolean>(this.service.deleteCake(id), HttpStatus.OK);
 	}
 }

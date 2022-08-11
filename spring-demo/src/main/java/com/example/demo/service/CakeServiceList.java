@@ -15,9 +15,10 @@ public class CakeServiceList implements CakeService {
 	@Override
 	public Cake makeCake(Cake cake) {
 		if (cake.getFlavour() != null && !cake.getFlavour().isBlank() && cake.getServings() > 0 && cake.getCost() != null) {
+			cake.setId(cakes.size() + 1); // Auto set cake id based on index
 			cakes.add(cake);
 			System.out.println(cake.toString());
-			return cake;
+			return cakes.get(this.cakes.size() - 1); // Return last cake in cakes
 		}
 		
 		return null;
