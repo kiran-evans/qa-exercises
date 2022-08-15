@@ -33,8 +33,8 @@ public class SeleniumDemoTest {
 		search.sendKeys("dress");
 		search.sendKeys(Keys.ENTER);
 		
-		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-		WebElement result = (WebElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#center_column > ul > li:nth-child(1) > div > div.right-block > h5 > a")));
+		WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10)); // Wait for page to load
+		WebElement result = (WebElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#center_column > ul > li:nth-child(1) > div > div.right-block > h5 > a"))); // Select first item label
 		
 		assertEquals("Printed Summer Dress", result.getText());
 	}
