@@ -47,27 +47,42 @@ public class SeleniumDemoTest {
 		
 		// Add to cart
 		
-		WebElement addToCart = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#add_to_cart > button"))); // Find Add to cart button
+		WebElement addToCart = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#buy_block > div > div.box-cart-bottom > div:nth-child(1) > #add_to_cart > button"))); // Find Add to cart button
 		addToCart.click();
 		
 		// Proceed to checkout
 		
-		WebElement proceedToCheckout = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"))); // Find Proceed to checkout 'a' tag
+		WebElement proceedToCheckout = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"))); // Find Proceed to checkout 'a' tag
 		proceedToCheckout.click();
 		
-		// Checkout
+		// 01 Summary
 		
 		WebElement checkout = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#center_column > p.cart_navigation.clearfix > a.button.btn.btn-default.standard-checkout.button-medium"))); // Find Proceed to checkout button
 		checkout.click();
 		
+		// 02 Sign in
+		
+		WebElement email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#email"))); // Find email field
+		email.sendKeys("jarjarbinks@meesamail.com");
+		
+		WebElement password = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#passwd"))); // Find password field
+		password.sendKeys("jarjarbinks");
+		password.sendKeys(Keys.ENTER);
+		
+		// 03 Address
+		
 		WebElement checkout2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#center_column > form > p > button"))); // Find Proceed to checkout button
 		checkout2.click();
 		
-		WebElement termsOfService = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#uniform-cgv"))); // Find Terms of service checkbox
+		// 04 Shipping
+		
+		WebElement termsOfService = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#uniform-cgv"))); // Find Terms of service tick box
 		termsOfService.click();
 		
 		WebElement checkout3 = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#form > p > button"))); // Find Proceed to checkout button
 		checkout3.click();
+		
+		// 05 Payment
 		
 		WebElement payByBank = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#HOOK_PAYMENT > div:nth-child(1) > div > p > a"))); // Find Pay by bank wire
 		payByBank.click();
