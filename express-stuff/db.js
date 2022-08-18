@@ -16,18 +16,18 @@ const biscuitSchema = new Schema({
         type: String,
         required: true,
         min: 2,
-        max: 255
+        max: 255,
     },
     count: {
         type: Number,
         required: true,
-        min: 1
+        min: 1,
     },
     cost: {
         type: Number,
         required: true,
-        min: 0
-    }
+        min: 0,
+    },
 });
 
 const Biscuit = mongoose.model('biscuit', biscuitSchema);

@@ -9,8 +9,8 @@ app.use('/biscuits', biscuitRoutes);
 
 // Errors
 
-app.get("/error", (req, res, next) => {
-    next(Error("This is an error"));
+app.get('/error', (req, res, next) => {
+    next(Error('This is an error'));
 });
 
 app.use((err, req, res, next) => {
@@ -20,6 +20,7 @@ app.use((err, req, res, next) => {
 
 app.use((err, req, res, next) => {
     res.status(500).send(err.message);
+    next();
 });
 
 
