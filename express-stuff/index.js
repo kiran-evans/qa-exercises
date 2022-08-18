@@ -1,19 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/newline-after-import */
-/* eslint-disable no-console */
-/* eslint-disable comma-dangle */
-/* eslint-disable space-in-parens */
-/* eslint-disable eol-last */
-/* eslint-disable no-multiple-empty-lines */
-/* eslint-disable no-unused-vars */
-/* eslint-disable radix */
-/* eslint-disable padded-blocks */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable quotes */
-/* eslint-disable prefer-const */
-/* eslint-disable indent */
-/* eslint-disable import/no-extraneous-dependencies */
-
 
 // Dep
 const express = require('express');
