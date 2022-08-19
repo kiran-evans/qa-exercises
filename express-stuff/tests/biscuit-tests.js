@@ -47,6 +47,16 @@ describe('CRUD Tests', () => {
     });
 
     // Read
+    it('Should get all biscuits', (done) => {
+        chai.request(server).get('/biscuits/getAll')
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res.status).to.equal(200);
+
+                return done();
+            });
+    });
+
     it('Should get biscuit', (done) => {
         chai.request(server).get(`/biscuits/get/${testBiscuit._id}`)
             .end((err, res) => {
