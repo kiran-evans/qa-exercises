@@ -11,13 +11,13 @@ const Biscuit = require('../db');
 router.get('/getAll', async (req, res, next) => {
 
     try {
-        const response = await Biscuit.find();
+        const result = await Biscuit.find();
     
-        if (response.length === 0) {
+        if (result.length === 0) {
             return res.status(200).json('Got nothing because biscuits is empty');
         }
 
-        return res.status(200).json(response);
+        return res.status(200).json(result);
     } catch (err) {
         return next(err);
     }
@@ -30,13 +30,13 @@ router.get('/get/:id', async (req, res, next) => {
     }
 
     try {
-        const response = await Biscuit.findById(req.params.id);
+        const result = await Biscuit.findById(req.params.id);
 
-        if (!response) {
+        if (!result) {
             return next( { status: 400, message: 'No biscuit found with that id' } );
         }
 
-        return res.status(200).json(response);
+        return res.status(200).json(result);
     } catch (err) {
         return next(err);
     }
@@ -56,7 +56,7 @@ router.post('/create', async (req, res, next) => {
     }
 });
 
-router.put('/update/:id', async (req, res, next) => {
+router.patch('/update/:id', async (req, res, next) => {
 
     try {
         const result = await Biscuit.findByIdAndUpdate(req.params.id, req.query);
@@ -69,8 +69,8 @@ router.put('/update/:id', async (req, res, next) => {
 router.delete('/delete/:id', async (req, res, next) => {
 
     try {
-        const result = await Biscuit.findByIdAndDelete(req.params.id);
-        return res.status(204).json(result);
+        await Biscuit.findByIdAndDelete(req.params.id);
+        return res.status(204).json();
     } catch (err) {
         return next(err);
     }

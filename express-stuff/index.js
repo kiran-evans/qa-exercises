@@ -27,3 +27,5 @@ app.use((err, req, res, next) => {
 const server = app.listen(12499, () => {
     console.log(`Started Express server on port ${server.address().port}`);
 });
+
+module.exports = server;
