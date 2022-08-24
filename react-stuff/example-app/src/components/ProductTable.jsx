@@ -10,8 +10,8 @@ const ProductTable = () => {
     const addToBasket = (item) => {
         setBasket(b => [item, ...b]);
     
-        console.log(item);
-        console.log(basket);
+        // console.log(item);
+        // console.log(basket);
     };
 
     const removeFromBasket = (id) => {
@@ -19,7 +19,7 @@ const ProductTable = () => {
         newBasket.splice(id, 1);
         setBasket(() => [...newBasket]);
         
-        console.log(basket);
+        // console.log(basket);
     };
 
     return (
