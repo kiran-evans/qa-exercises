@@ -30,8 +30,8 @@ function App() {
       <Calculator />
       <Line />
 
-      <Content />
-      <Line />
+      {/* <Content />
+      <Line /> */}
       
       <SubContent />
     
