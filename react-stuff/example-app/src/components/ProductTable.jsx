@@ -17,7 +17,7 @@ const ProductTable = () => {
     const removeFromBasket = (id) => {
         let newBasket = basket;
         newBasket.splice(id, 1);
-        setBasket(() => [newBasket]);
+        setBasket(() => [...newBasket]);
         
         console.log(basket);
     };
