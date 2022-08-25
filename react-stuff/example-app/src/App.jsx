@@ -2,6 +2,7 @@ import './App.css';
 import Calculator from './components/Calculator';
 import Car from './components/Car';
 import Content from './components/Content';
+import FilmRequest from './components/FilmRequest';
 import Line from './components/Line';
 import MyComponent from './components/MyComponent';
 import NameComponent from './components/NameComponent';
@@ -42,6 +43,9 @@ function App() {
       <Line />
 
       <NameComponent />
+      <Line />
+
+      <FilmRequest />
       <Line />
     
     </div>
